@@ -52,3 +52,5 @@ include plugin_dir_path(__FILE__) . 'client/build/index.php';
 
 // bootstrap admin code
 include plugin_dir_path(__FILE__) . 'admin/build/index.php';
+
+// some other PHP code here...
