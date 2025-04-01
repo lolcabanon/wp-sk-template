@@ -25,7 +25,7 @@ Ohh, and, I use Arch btw (Manjaro ackchyually). Reminder, I built this for me. Y
 1. While you're at it, have a read
 1. Change prod host in `sharedConfig.js`
 1. `pnpm install && cd ./client && pnpm install && cd ../admin && pnpm install`
-1. `pnpm dev`
+1. `pnpm dev` (from root or client or admin)
 1. Write some code
 
 ### Build and deploy
