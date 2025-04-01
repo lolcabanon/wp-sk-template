@@ -1,0 +1,24 @@
+{
+	"name": "my-plugin-root",
+	"version": "0.0.1",
+	"license": "GPL-2.0+",
+	"scripts": {
+		"dev": "run-p dev:*",
+		"dev:client": "cd client && pnpm dev",
+		"dev:admin": "cd admin && pnpm dev",
+		"build": "run-p build:*",
+		"build:client": "cd client && pnpm build",
+		"build:admin": "cd admin && pnpm build",
+		"test": "vitest",
+		"zip": "export MY_PLUGIN=my-plugin && mv $MY_PLUGIN.zip $MY_PLUGIN.zip.bak; mkdir $MY_PLUGIN; cp -r --parents ./svelteplugin.php ./index.php ./admin/index.php ./admin/build ./client/build ./$MY_PLUGIN && zip -r $MY_PLUGIN.zip $MY_PLUGIN/ && rm -r $MY_PLUGIN/",
+		"tar": "export MY_PLUGIN=my-plugin && tar -cf $MY_PLUGIN.tar.gz ./svelteplugin.php ./index.php ./admin/index.php ./admin/build ./client/build",
+		"wrap:local": "WRAP_TARGET=local pnpm build && pnpm zip",
+		"wrap:prod": "WRAP_TARGET=prod pnpm build && pnpm zip",
+		"version": "node bumper.cjs svelteplugin.php && git add svelteplugin.php"
+	},
+	"devDependencies": {
+		"npm-run-all2": "^7.0.2",
+		"typescript": "^5.6.2"
+	},
+	"type": "module"
+}
